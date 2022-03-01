@@ -61,7 +61,7 @@ const showPhoneDetail = mobile => {
     box.classList.add('card');
     phoneDetails.innerText = '';
     box.innerHTML = `
-    <img class="w-50" src="${mobile.image}"alt="...">
+    <img class="w-50 h-50" src="${mobile.image}"alt="...">
     <div class="card-body bg-dark">
        <h5 class="card-title text-white">${mobile.brand}</h5>
        <p class="card-text text-white">Model:${mobile.slug}</p>
@@ -71,13 +71,3 @@ const showPhoneDetail = mobile => {
     `;
     phoneDetails.appendChild(box);
 };
-
-const addFeaturesPhone = feature => {
-    const url = `
-    https://openapi.programming-hero.com/api/phone/${feature}
-    `;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => console.log(data.data))
-}
-addFeaturesPhone()
